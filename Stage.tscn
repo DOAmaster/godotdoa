@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://coin/Coin.tscn" type="PackedScene" id=2]
@@ -8,14 +8,8 @@
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://enemy/Enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://background/ParallaxBg.tscn" type="PackedScene" id=8]
-
-
-
-
-
-
-
-
+[ext_resource path="res://sayhello.gd" type="Script" id=9]
+[ext_resource path="res://showtime.gd" type="Script" id=10]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -65,6 +59,7 @@ __meta__ = {
 }
 
 [node name="Coins" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Coin" parent="Coins" instance=ExtResource( 2 )]
 position = Vector2( 672, 1179 )
@@ -193,6 +188,7 @@ position = Vector2( 4236.75, 541.058 )
 position = Vector2( 4172.75, 541.058 )
 
 [node name="Props" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="MovingPlatform" parent="Props" instance=ExtResource( 3 )]
 position = Vector2( 1451.86, 742.969 )
@@ -220,6 +216,7 @@ position = Vector2( 251.684, 1045.6 )
 physics_material_override = SubResource( 1 )
 
 [node name="Enemies" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Enemy1" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 834.664, 1309.6 )
@@ -277,3 +274,30 @@ size_flags_vertical = 0
 text = "This is a simple demo on how to make a platformer game with Godot.\"This version uses physics and the 2D physics engine for motion and collision.\"\"The demo also shows the benefits of using the scene system, where coins,\"enemies and the player are edited separatedly and instanced in the stage.\"\"To edit the base tiles for the  tileset, open the tileset_edit.tscn file and follow \"instructions.\""
 autowrap = true
 
+[node name="Panel" type="Panel" parent="."]
+margin_left = 188.417
+margin_top = 878.779
+margin_right = 296.417
+margin_bottom = 971.779
+script = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Panel"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Anyone Home?"
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 10.8329
+margin_top = 18.5707
+margin_right = 58.8329
+margin_bottom = 38.5707
+text = "Begin"
+
+[node name="Label2" type="Label" parent="Panel"]
+margin_left = 11.415
+margin_top = 44.3175
+margin_right = 73.415
+margin_bottom = 63.3175
+text = "deltatime"
+script = ExtResource( 10 )
+[connection signal="pressed" from="Panel/Button" to="Panel" method="_on_Button_pressed"]
