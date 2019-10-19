@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://coin/Coin.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://background/ParallaxBg.tscn" type="PackedScene" id=8]
 [ext_resource path="res://sayhello.gd" type="Script" id=9]
 [ext_resource path="res://showtime.gd" type="Script" id=10]
+[ext_resource path="res://splashscreen.tscn" type="PackedScene" id=11]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -188,7 +189,6 @@ position = Vector2( 4236.75, 541.058 )
 position = Vector2( 4172.75, 541.058 )
 
 [node name="Props" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="MovingPlatform" parent="Props" instance=ExtResource( 3 )]
 position = Vector2( 1451.86, 742.969 )
@@ -216,7 +216,6 @@ position = Vector2( 251.684, 1045.6 )
 physics_material_override = SubResource( 1 )
 
 [node name="Enemies" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Enemy1" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 834.664, 1309.6 )
@@ -243,7 +242,7 @@ position = Vector2( 2586.9, 939.059 )
 physics_material_override = SubResource( 7 )
 
 [node name="Enemy7" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 1457.6, 688.741 )
+position = Vector2( 1456.37, 687.513 )
 physics_material_override = SubResource( 8 )
 
 [node name="Enemy8" parent="Enemies" instance=ExtResource( 7 )]
@@ -300,4 +299,6 @@ margin_right = 73.415
 margin_bottom = 63.3175
 text = "deltatime"
 script = ExtResource( 10 )
+
+[node name="Background" parent="." instance=ExtResource( 11 )]
 [connection signal="pressed" from="Panel/Button" to="Panel" method="_on_Button_pressed"]

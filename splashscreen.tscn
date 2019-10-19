@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://background.png" type="Texture" id=1]
+[ext_resource path="res://splashscreen.gd" type="Script" id=2]
+[ext_resource path="res://robisplash_logo.png" type="Texture" id=3]
+[ext_resource path="res://start_normal.png" type="Texture" id=4]
+[ext_resource path="res://start_pressed.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "intro"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Logo:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 300, -500 ), Vector2( 118, 0 ) ]
+}
+
+[node name="Background" type="TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Logo" type="TextureRect" parent="."]
+margin_left = 118.0
+margin_right = 684.0
+margin_bottom = 375.0
+texture = ExtResource( 3 )
+
+[node name="Start" type="TextureButton" parent="."]
+margin_left = 322.03
+margin_top = 361.54
+margin_right = 471.03
+margin_bottom = 435.54
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+
+[node name="Copyright" type="Label" parent="."]
+margin_left = 591.968
+margin_top = 433.443
+margin_right = 789.968
+margin_bottom = 447.443
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0.352941, 0.352941, 0.352941, 1 )
+text = "DohWah Productions 2019"
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+anims/intro = SubResource( 1 )
+[connection signal="button_up" from="Start" to="." method="_on_Start_button_up"]
