@@ -14,4 +14,4 @@ func _ready():
 
 
 func _on_Start_button_up():
-	get_tree().change_scene("res://Stage.tscn")
+	get_tree().change_scene("res://Level1.tscn")
