@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=24 format=2]
+[gd_resource type="TileSet" load_steps=25 format=2]
 
 [ext_resource path="res://tiles_demo.png" type="Texture" id=1]
 [ext_resource path="res://art/wall.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://png/ground.png" type="Texture" id=4]
 [ext_resource path="res://png/ground_cave.png" type="Texture" id=5]
 [ext_resource path="res://png/grass.png" type="Texture" id=6]
+[ext_resource path="res://png/bonus.png" type="Texture" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( -32, -24, 32, -24, 32, 32, -32, 32 )
@@ -400,3 +401,13 @@ points = PoolVector2Array( -32, 32, -32, -24, 32, -24, 32, 32 )
 22/navigation_offset = Vector2( 0, 0 )
 22/shapes = [  ]
 22/z_index = 0
+23/name = "bonus.png 23"
+23/texture = ExtResource( 7 )
+23/tex_offset = Vector2( 0, 0 )
+23/modulate = Color( 1, 1, 1, 1 )
+23/region = Rect2( 0, 0, 64, 64 )
+23/tile_mode = 0
+23/occluder_offset = Vector2( 0, 0 )
+23/navigation_offset = Vector2( 0, 0 )
+23/shapes = [  ]
+23/z_index = 0
