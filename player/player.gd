@@ -35,6 +35,13 @@ const STOP_JUMP_FORCE = 900.0
 const MAX_SHOOT_POSE_TIME = 0.3
 const MAX_FLOOR_AIRBORNE_TIME = 0.15
 
+#new char vars consts
+const STARTING_HEALTH = 100;
+
+# new Health vars inits
+var currentHP = STARTING_HEALTH;
+var currentMaxHP = STARTING_HEALTH;
+
 var anim = ""
 var siding_left = false
 var jumping = false
@@ -48,6 +55,8 @@ var shoot_time = 1e20
 
 var Bullet = preload("res://player/Bullet.tscn")
 var Enemy = preload("res://enemy/Enemy.tscn")
+
+#var healthUI = self.get_node("UI/healthLabel").text = "Health: 100"
 
 
 func _shot_bullet():
@@ -71,6 +80,14 @@ func _shot_bullet():
 	add_collision_exception_with(bi) # Make bullet and this not collide
 
 func _integrate_forces(s):
+	#update ui with each step
+	var tempHP = String(currentHP)
+	var tempMaxHP = String(currentMaxHP)
+	#var tempLocation = String(self.lo
+	self.get_node("UI/currentHP").set_text(tempHP)
+	self.get_node("UI/currentMaxHP").set_text(tempMaxHP)
+	
+	
 	var lv = s.get_linear_velocity()
 	var step = s.get_step()
 	
@@ -137,6 +154,8 @@ func _integrate_forces(s):
 		# Process logic when character is on floor
 		if move_left and not move_right:
 			if lv.x > -WALK_MAX_VELOCITY:
+				#disabled moving left
+				#break
 				lv.x -= WALK_ACCEL * step
 		elif move_right and not move_left:
 			if lv.x < WALK_MAX_VELOCITY:
