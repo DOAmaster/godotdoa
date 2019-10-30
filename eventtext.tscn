@@ -1,0 +1,54 @@
+[gd_scene format=2]
+
+[node name="eventtext" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 640.0
+margin_bottom = 358.0
+color = Color( 0.352941, 0.352941, 0.352941, 0.678431 )
+
+[node name="title" type="Label" parent="."]
+margin_right = 642.0
+margin_bottom = 31.0
+text = "Event Title
+"
+align = 1
+
+[node name="desc" type="RichTextLabel" parent="."]
+margin_left = 5.0
+margin_top = 35.0
+margin_right = 323.0
+margin_bottom = 358.0
+text = "He can tophere can eat door making honey is he was out himself: \"That I wonders, an eat buzzing somebody's means so and he of then he climbed unders. (\"What it.\" And and, anothe oak-tree.\" Then I came tree, and he oak-tree, the for making honey.\" So himself. If that the name that it.\" Then he name only reason for making, withought a bee tree. He climbed as he tree.\" \"Winnie-the of the being a bear long a long time ago only reason foot of the top of that does 'under in go now of is place in to climb "
+
+[node name="option1" type="MenuButton" parent="."]
+margin_left = 481.29
+margin_top = 54.1645
+margin_right = 545.29
+margin_bottom = 74.1645
+rect_pivot_offset = Vector2( -71.8665, 7.86366 )
+text = "Option1"
+
+[node name="option2" type="MenuButton" parent="."]
+margin_left = 480.516
+margin_top = 88.2107
+margin_right = 544.516
+margin_bottom = 108.211
+rect_pivot_offset = Vector2( -71.8665, 7.86366 )
+text = "Option2"
+
+[node name="option3" type="MenuButton" parent="."]
+margin_left = 481.29
+margin_top = 123.805
+margin_right = 545.29
+margin_bottom = 143.805
+rect_pivot_offset = Vector2( -71.8665, 7.86366 )
+text = "Option3"
+
+[node name="option4" type="MenuButton" parent="."]
+margin_left = 481.29
+margin_top = 159.398
+margin_right = 545.29
+margin_bottom = 179.398
+rect_pivot_offset = Vector2( -71.8665, 7.86366 )
+text = "Option4"
